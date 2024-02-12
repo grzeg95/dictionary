@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="handleFormSubmit(); input.blur();">
+  <mat-form-field class="w-100" appearance="outline">
+    <input
+      matInput
+      #input
+      [formControl]="form.controls.phase"
+      placeholder="Search for any word..."
+      class="fw-bold"
+    >
+    <mat-icon matSuffix svgIcon="icon-search" class="app-phase-search-bar__icon-search"></mat-icon>
+    @if (form.controls.phase.errors?.['required'] && form.controls.phase.touched) {
+      <mat-error>Whoops, can’t be empty...</mat-error>
+    }
+  </mat-form-field>
+</form>

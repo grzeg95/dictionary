@@ -8,6 +8,10 @@
     "src": "icon-moon.svg"
   },
   {
+    "name": "icon-search",
+    "src": "icon-search.svg"
+  },
+  {
     "name": "logo",
     "src": "logo.svg"
   }

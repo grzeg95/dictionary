@@ -6,6 +6,7 @@ import {MatSlideToggle, MatSlideToggleChange} from '@angular/material/slide-togg
 import {ThemeSelectorService} from '@grzeg95/angular-lib-theme-selector';
 import {Font} from './font/font.model';
 import {FontStore} from './font/font.store';
+import {PhaseSearchBarComponent} from './phase/phase-search-bar/phase-search-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import {FontStore} from './font/font.store';
     MatMenuTrigger,
     MatMenu,
     MatMenuItem,
-    MatSlideToggle
+    MatSlideToggle,
+    PhaseSearchBarComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

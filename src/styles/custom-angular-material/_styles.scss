@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use '@angular/material/form-field/form-field-theme' as form-field-theme;
 @include mat.core();
 
 $basic-theme: mat.define-light-theme((
@@ -13,6 +14,7 @@ $basic-theme: mat.define-light-theme((
 @include mat.button-theme($basic-theme);
 @include mat.menu-theme($basic-theme);
 @include mat.slide-toggle-theme($basic-theme);
+@include form-field-theme.theme($basic-theme);
 
 :root {
 
@@ -21,6 +23,10 @@ $basic-theme: mat.define-light-theme((
   --mat-menu-item-label-text-line-height: 24px;
   --mat-menu-item-label-text-size: 18px;
   --mat-menu-item-label-text-weight: bold;
+
+  // mdc-outlined-text-field
+  --mdc-outlined-text-field-focus-outline-width: 1px;
+  --mdc-outlined-text-field-container-shape: 16px;
 }
 
 html {
@@ -77,4 +83,41 @@ html {
   .mat-mdc-slide-toggle .mdc-label {
     display: none;
   }
+
+  .mdc-text-field--outlined {
+    padding-left: max(16px,calc(var(--mdc-outlined-text-field-container-shape) + 8px));
+  }
+
+  .mdc-text-field {
+    border-radius: 16px;
+  }
+
+  .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+  .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+    line-height: initial;
+  }
+
+  .mat-mdc-form-field-hint-wrapper,
+  .mat-mdc-form-field-error-wrapper {
+    padding: 0;
+  }
+
+  .mat-mdc-form-field-icon-prefix>.mat-icon,
+  .mat-mdc-form-field-icon-suffix>.mat-icon {
+    padding: 24px;
+  }
+
+  .mdc-text-field--outlined .mat-mdc-form-field-infix,
+  .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .mat-mdc-form-field-flex {
+    align-items: center;
+  }
+
+   .mat-mdc-form-field-infix {
+     display: flex;
+   }
 }
