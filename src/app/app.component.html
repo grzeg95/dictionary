@@ -13,11 +13,14 @@
         <mat-icon iconPositionEnd svgIcon="icon-arrow-down" class="d-flex"/>
       </button>
 
-      <mat-menu #menu="matMenu" class="mt-3" xPosition="before">
+      <mat-menu #menu="matMenu" class="mt-3 menu-backdrop-class" xPosition="before">
         @for (font of fonts(); track font) {
           <button mat-menu-item (click)="setFont(font)" [class]="font.class">{{ font.title }}</button>
         }
       </mat-menu>
+      <div class="vr app-root__main__nav__vr"></div>
+      <mat-slide-toggle [checked]="selectedTheme() === 'dark-theme'" (change)="setDarkMode($event.checked)" [hideIcon]="true" />
+      <mat-icon svgIcon="icon-moon" class="d-flex app-root__main__nav__icon-moon icon-color-accent"></mat-icon>
     </div>
   </div>
 </div>

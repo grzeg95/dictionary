@@ -21,3 +21,107 @@ body {
 .inconsolata {
   font-family: Inconsolata, monospace;
 }
+
+.dark-theme {
+
+  // mat-menu
+  --mat-menu-container-color: #1F1F1F;
+  --mat-menu-item-label-text-color: white;
+
+  background: #050505;
+  color: white;
+
+  .mat-mdc-menu-item:not([disabled]):hover {
+    .mat-mdc-menu-item-text {
+      color: #A445ED;
+    }
+  }
+
+  .mat-mdc-button {
+    --mdc-text-button-label-text-color: white;
+  }
+
+  .menu-backdrop-class {
+    box-shadow: 0 5px 30px #A445ED;
+  }
+
+  .vr {
+    background: #E9E9E9;
+  }
+
+  .mat-mdc-slide-toggle.mat-accent {
+    --mdc-switch-selected-track-color: #A445ED;
+    --mdc-switch-selected-handle-color: white;
+    --mdc-switch-selected-hover-handle-color: white;
+    --mdc-switch-selected-hover-track-color: #A445ED;
+    --mdc-switch-selected-pressed-handle-color: white;
+    --mdc-switch-selected-pressed-track-color: #A445ED;
+    --mdc-switch-selected-focus-handle-color: white;
+    --mdc-switch-selected-focus-track-color: #A445ED;
+  }
+
+  .icon-color-accent {
+    svg {
+      path {
+        stroke: #A445ED;
+      }
+    }
+  }
+}
+
+.light-theme {
+
+  // mat-menu
+  --mat-menu-container-color: white;
+  --mat-menu-item-label-text-color: #2D2D2D;
+
+  // mdc-switch-unselected
+  --mdc-switch-unselected-track-color: #757575;
+  --mdc-switch-unselected-handle-color: white;
+  --mdc-switch-unselected-hover-track-color: #757575;
+  --mdc-switch-unselected-hover-handle-color: white;
+  --mdc-switch-unselected-focus-track-color: #757575;
+  --mdc-switch-unselected-focus-handle-color: white;
+  --mdc-switch-unselected-pressed-track-color: #757575;
+  --mdc-switch-unselected-pressed-handle-color: white;
+
+  background: white;
+  color: #2D2D2D;
+
+  .mat-mdc-menu-item:not([disabled]):hover {
+    .mat-mdc-menu-item-text {
+      color: #A445ED;
+    }
+  }
+
+  .mat-mdc-button {
+    --mdc-text-button-label-text-color: #2D2D2D;
+  }
+
+  .menu-backdrop-class {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .vr {
+    background: #E9E9E9;
+  }
+
+  .mat-mdc-slide-toggle.mat-accent {
+    --mdc-switch-selected-track-color: #A445ED;
+    --mdc-switch-selected-handle-color: white;
+    --mdc-switch-selected-hover-handle-color: white;
+    --mdc-switch-selected-hover-track-color: #A445ED;
+    --mdc-switch-selected-pressed-handle-color: white;
+    --mdc-switch-selected-pressed-track-color: #A445ED;
+    --mdc-switch-selected-focus-handle-color: white;
+    --mdc-switch-selected-focus-track-color: #A445ED;
+  }
+
+  .icon-color-accent {
+    svg {
+      path {
+        stroke: #757575;
+      }
+    }
+  }
+}

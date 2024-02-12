@@ -2,6 +2,7 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
 import {APP_INITIALIZER, ApplicationConfig} from '@angular/core';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
+import {provideThemeSelector} from '@grzeg95/angular-lib-theme-selector';
 import {forkJoin, mergeMap} from 'rxjs';
 import {SvgService} from '../services/svg.service';
 import {routes} from './app.routes';
@@ -28,6 +29,9 @@ export const appConfig: ApplicationConfig = {
           );
         };
       }
-    }
+    },
+    provideThemeSelector({
+      themes: ['light-theme', 'dark-theme']
+    })
   ]
 };

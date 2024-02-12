@@ -47,6 +47,32 @@
           font-size: 18px;
         }
       }
+
+      &__vr {
+
+        margin-right: 16px;
+        margin-left: calc(16px - 8px);
+        height: 32px;
+        width: 1px;
+        display: block;
+        opacity: 1;
+        align-self: auto;
+
+        @include media-breakpoint-up(md) {
+          margin-right: 26px;
+          margin-left: calc(26px - 8px);
+        }
+      }
+
+      &__icon-moon {
+
+        flex: none;
+        margin-left: 11px;
+
+        @include media-breakpoint-up(md) {
+          margin-left: 19px;
+        }
+      }
     }
   }
 }

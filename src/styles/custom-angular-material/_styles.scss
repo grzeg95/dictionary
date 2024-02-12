@@ -12,6 +12,7 @@ $basic-theme: mat.define-light-theme((
 @include mat.core-theme($basic-theme);
 @include mat.button-theme($basic-theme);
 @include mat.menu-theme($basic-theme);
+@include mat.slide-toggle-theme($basic-theme);
 
 :root {
 
@@ -20,6 +21,10 @@ $basic-theme: mat.define-light-theme((
   --mat-menu-item-label-text-line-height: 24px;
   --mat-menu-item-label-text-size: 18px;
   --mat-menu-item-label-text-weight: bold;
+}
+
+html {
+  --mdc-switch-track-width: 40px;
 }
 
 .custom-angular-material {
@@ -38,5 +43,38 @@ $basic-theme: mat.define-light-theme((
   .mat-mdc-button .mdc-button__label+.mat-icon {
     margin-left: 16px;
     margin-right: 0;
+  }
+
+  .mdc-switch {
+    --mdc-switch-handle-width: 14px;
+    --mdc-switch-handle-height: 14px;
+    --mdc-switch-track-height: 20px;
+    --mdc-switch-track-shape: 20px;
+  }
+
+  .mdc-switch__handle-track {
+    left: 3px;
+    top: 3px;
+  }
+
+  .mdc-switch--selected .mdc-switch__handle-track {
+    transform: translateX(calc(100% + 6px));
+  }
+
+  .mdc-switch .mdc-switch__handle-track {
+    width: calc(100% - var(--mdc-switch-handle-width) - 12px);
+  }
+
+  .mdc-switch__handle-track {
+    height: calc(100% - 6px);
+  }
+
+  .mat-mdc-slide-toggle {
+    line-height: 0;
+  }
+
+  // there is no way to remove it when label is off
+  .mat-mdc-slide-toggle .mdc-label {
+    display: none;
   }
 }

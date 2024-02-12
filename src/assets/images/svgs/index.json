@@ -4,6 +4,10 @@
     "src": "icon-arrow-down.svg"
   },
   {
+    "name": "icon-moon",
+    "src": "icon-moon.svg"
+  },
+  {
     "name": "logo",
     "src": "logo.svg"
   }
