@@ -10,3 +10,33 @@ $basic-theme: mat.define-light-theme((
 ));
 
 @include mat.core-theme($basic-theme);
+@include mat.button-theme($basic-theme);
+@include mat.menu-theme($basic-theme);
+
+:root {
+
+  // mat-menu
+  --mat-menu-container-shape: 16px;
+  --mat-menu-item-label-text-line-height: 24px;
+  --mat-menu-item-label-text-size: 18px;
+  --mat-menu-item-label-text-weight: bold;
+}
+
+.custom-angular-material {
+
+  .mat-mdc-menu-content {
+    padding: 14px 0;
+  }
+
+  .mat-mdc-menu-item {
+    padding-left: 24px;
+    padding-right: 24px;
+    min-height: 41px;
+    min-width: 182px;
+  }
+
+  .mat-mdc-button .mdc-button__label+.mat-icon {
+    margin-left: 16px;
+    margin-right: 0;
+  }
+}

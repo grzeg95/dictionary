@@ -37,6 +37,16 @@
           height: 38px !important;
         }
       }
+
+      &__selected-font {
+
+        font-size: 14px;
+        line-height: 24px;
+
+        @include media-breakpoint-up(md) {
+          font-size: 18px;
+        }
+      }
     }
   }
 }

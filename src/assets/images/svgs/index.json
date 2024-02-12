@@ -1,5 +1,9 @@
 [
   {
+    "name": "icon-arrow-down",
+    "src": "icon-arrow-down.svg"
+  },
+  {
     "name": "logo",
     "src": "logo.svg"
   }
