@@ -1,0 +1,42 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+.app-root {
+
+  &__main {
+
+    margin: 0 23px;
+    max-width: 737px;
+
+    @media (min-width: 800px) {
+      margin: auto;
+    }
+
+    &__nav {
+
+      margin-top: 23px;
+      margin-bottom: 23px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 57px;
+        margin-bottom: 51px;
+      }
+
+      &__logo {
+
+        width: 30px !important;
+        height: 34px !important;
+
+        svg g {
+          stroke: #757575;
+        }
+
+        @include media-breakpoint-up(md) {
+          width: 34px !important;
+          height: 38px !important;
+        }
+      }
+    }
+  }
+}
