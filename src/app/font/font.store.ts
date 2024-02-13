@@ -1,5 +1,5 @@
-import {inject, InjectionToken} from '@angular/core';
-import {patchState, signalStore, withMethods, withState} from '@ngrx/signals';
+import {computed, inject, InjectionToken} from '@angular/core';
+import {patchState, signalStore, withComputed, withMethods, withState} from '@ngrx/signals';
 import {Font} from './font.model';
 import {FontService} from './font.service';
 
@@ -46,5 +46,10 @@ export const FontStore = signalStore(
         selected: font
       })
     }
+  })),
+  withComputed((store) => ({
+    sansSerif: computed(() => store.selected()?.class === 'inter'),
+    serif: computed(() => store.selected()?.class === 'lora'),
+    mono: computed(() => store.selected()?.class === 'inconsolata')
   }))
 );

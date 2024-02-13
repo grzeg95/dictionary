@@ -15,6 +15,8 @@ $basic-theme: mat.define-light-theme((
 @include mat.menu-theme($basic-theme);
 @include mat.slide-toggle-theme($basic-theme);
 @include form-field-theme.theme($basic-theme);
+@include mat.fab-theme($basic-theme);
+@include mat.progress-bar-theme($basic-theme);
 
 :root {
 

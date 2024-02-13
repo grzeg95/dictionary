@@ -1,0 +1,8 @@
+@mixin hr($theme-colors) {
+
+  hr {
+    height: 1px;
+    border: none;
+    background: map-get($theme-colors, 'secondary');
+  }
+}

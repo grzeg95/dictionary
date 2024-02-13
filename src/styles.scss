@@ -4,6 +4,7 @@
 
 @import 'styles/custom-angular-material/styles';
 @import 'styles/custom-bootstrap/styles';
+@import 'styles/shared/styles';
 
 :root {
 
@@ -84,8 +85,19 @@ body {
   --mdc-outlined-text-field-caret-color: white;
   --mdc-outlined-text-field-error-outline-color: #FF5252;
 
+  // mdc-fab
+  --mdc-fab-container-elevation-shadow: none;
+  --mdc-fab-hover-container-elevation-shadow: none;
+  --mdc-fab-pressented-container-elevation-shadow: none;
+  --mdc-fab-focus-container-elevation-shadow: none;
+  --mdc-fab-pressed-container-elevation-shadow: none;
+
   background: #050505;
   color: white;
+
+  .color-basic {
+    color: white;
+  }
 
   .mdc-text-field--outlined {
     background: #1F1F1F;
@@ -127,6 +139,24 @@ body {
       }
     }
   }
+
+  .mat-mdc-fab.mat-accent,
+  .mat-mdc-mini-fab.mat-accent {
+    --mdc-fab-container-color: rgba(164, 69, 237, 0.25);
+    --mat-fab-foreground-color: #A445ED;
+    --mat-fab-state-layer-color: #000;
+    --mat-fab-ripple-color: rgba(164, 69, 237, 0.1);
+
+    &:hover {
+      --mdc-fab-container-color: #A445ED;
+      --mat-fab-foreground-color: white;
+    }
+  }
+
+  .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #C577FF;
+    --mdc-linear-progress-track-color: #1F1F1F;
+  }
 }
 
 .light-theme {
@@ -159,8 +189,19 @@ body {
   --mdc-outlined-text-field-caret-color: #2D2D2D;
   --mdc-outlined-text-field-error-outline-color: #FF5252;
 
+  // mdc-fab
+  --mdc-fab-container-elevation-shadow: none;
+  --mdc-fab-hover-container-elevation-shadow: none;
+  --mdc-fab-pressented-container-elevation-shadow: none;
+  --mdc-fab-focus-container-elevation-shadow: none;
+  --mdc-fab-pressed-container-elevation-shadow: none;
+
   background: white;
   color: #2D2D2D;
+
+  .color-basic {
+    color: #2D2D2D;
+  }
 
   .mdc-text-field--outlined {
     background: #F4F4F4;
@@ -201,5 +242,23 @@ body {
         stroke: #757575;
       }
     }
+  }
+
+  .mat-mdc-fab.mat-accent,
+  .mat-mdc-mini-fab.mat-accent {
+    --mdc-fab-container-color: rgba(164, 69, 237, 0.25);
+    --mat-fab-foreground-color: #A445ED;
+    --mat-fab-state-layer-color: #000;
+    --mat-fab-ripple-color: rgba(164, 69, 237, 0.1);
+
+    &:hover {
+      --mdc-fab-container-color: #A445ED;
+      --mat-fab-foreground-color: white;
+    }
+  }
+
+  .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #c577ff;
+    --mdc-linear-progress-track-color: #F4F4F4;
   }
 }

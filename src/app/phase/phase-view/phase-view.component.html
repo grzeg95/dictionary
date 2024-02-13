@@ -1,0 +1,128 @@
+<!-- Search Bar -->
+
+<app-phase-search-bar />
+
+<!-- Show phase-view is loading -->
+
+<div class="app-phase-view__loading-wrapper">
+  @if (isLoading()) {
+    <mat-progress-bar mode="query"/>
+  }
+</div>
+
+<!-- Phase -->
+
+<!-- Show phase-view not found -->
+
+@if (error(); as phaseError) {
+  <div class="d-flex flex-column text-center">
+
+    <div class="heading-l heading-l-md app-phase-view__margin-bottom-44 app-phase-view__margin-top-99">
+      😕
+    </div>
+
+    <div class="heading-s heading-s-md fw-bold app-phase-view__margin-bottom-24">
+      <span class="fst-italic color-secondary">"{{ phaseError.phase }}"&nbsp;</span> {{ phaseError.title }}
+    </div>
+
+    <div class="body-m body-m-md color-secondary">
+      {{ phaseError.message }} {{ phaseError.resolution }}
+    </div>
+  </div>
+}
+
+<!-- Show phase-view -->
+
+@if (phase(); as phase) {
+  <div class="d-flex align-items-center" [style.margin-top.px]="spacingA()">
+    <div class="d-flex flex-column w-100">
+      <div class="heading-l heading-l-md fw-medium" [style.margin-bottom.px]="spacingB()">{{ phase.word }}</div>
+      <div class="heading-m heading-m-md color-accent">{{ phase.phonetic ? phase.phonetic : phonetic()?.text ? phonetic()?.text : '' }}</div>
+    </div>
+
+    @if (phonetic()?.audio; as audio) {
+
+      <button
+        mat-fab
+        class="app-phase-view__mdc-fab app-phase-view__mdc-fab-md"
+        color="accent"
+        aria-label="Play phase phonetic"
+        (click)="handleClickButtonPlayPhasePhonetic(audio)"
+      >
+        @if (phasePhoneticAudioIsLoading() || phasePhoneticAudioIsPlaying()) {
+          <mat-icon>stop</mat-icon>
+        } @else {
+          <mat-icon>play_arrow</mat-icon>
+        }
+      </button>
+    }
+  </div>
+
+  @for (phaseMeaning of phase.meanings; track phaseMeaning) {
+    <div class="d-flex flex-column">
+
+      <div class="d-flex align-items-center" [style.gap.px]="spacingG()" [style.margin-top.px]="spacingC()" [style.margin-bottom.px]="spacingD()">
+        <span class="heading-m heading-m-md" [ngClass]="{'fw-bold': fontWeightBoldA(), 'fst-italic': fontItalicA()}">{{ phaseMeaning.partOfSpeech }}</span>
+        <hr class="w-100 m-0">
+      </div>
+
+      <div class="heading-s heading-s-md color-secondary" [style.margin-bottom.px]="spacingE()">Meaning</div>
+
+      <ul>
+        @for (definition of phaseMeaning.definitions; track definition) {
+          <li class="body-m body-m-md">{{ definition.definition }}</li>
+        }
+      </ul>
+
+      @if (phaseMeaning.synonyms.length || phaseMeaning.antonyms.length) {
+        <table class="fit-content">
+
+          @if (phaseMeaning.synonyms.length && phaseMeaning.synonyms; as synonyms) {
+            <tr>
+              <th class="heading-s heading-s-md fw-normal color-secondary" [style.padding-top.px]="spacingE()">Synonyms</th>
+
+              <th [style.padding-top.px]="spacingE()" [style.padding-left.px]="spacingH()">
+                @for (synonym of synonyms; track synonym; let first = $first) {
+                  @if (!first) {
+                    <span class="heading-s heading-s-md color-secondary">, </span>
+                  }
+                  <span class="heading-s heading-s-md color-accent">{{ synonym }}</span>
+                }
+              </th>
+            </tr>
+          }
+
+          @if (phaseMeaning.antonyms.length && phaseMeaning.antonyms; as antonyms) {
+            <tr>
+              <th class="heading-s heading-s-md fw-normal color-secondary" [style.padding-top.px]="spacingE()">Antonyms</th>
+
+              <th [style.padding-top.px]="spacingE()" [style.padding-left.px]="spacingH()">
+                @for (antonym of antonyms; track antonym; let first = $first) {
+                  @if (!first) {
+                    <span class="heading-s heading-s-md color-secondary">, </span>
+                  }
+                  <span class="heading-s heading-s-md color-accent">{{ antonym }}</span>
+                }
+              </th>
+            </tr>
+          }
+        </table>
+      }
+
+    </div>
+  }
+
+  @if (phase.sourceUrls && phase.sourceUrls.length && phase.sourceUrls; as sourceUrls) {
+    <hr class="w-100" [style.margin-top.px]="spacingE()" [style.margin-bottom.px]="spacingF()">
+
+    <div class="d-flex flex-column flex-md-row" [style.margin-bottom.px]="spacingF()">
+      <div class="d-flex">
+        <a [href]="sourceUrls[0]" target="_blank" class="body-s color-secondary" [style.margin-right.px]="spacingI()" [ngClass]="{'text-decoration-none': textDecorationNoneA()}">Source</a>
+      </div>
+      <div class="d-flex align-items-center a-wrapper">
+        <a [href]="sourceUrls[0]" target="_blank" class="body-s color-basic" [ngClass]="{'text-decoration-none': textDecorationNoneB()}">{{ sourceUrls[0] }}</a>
+        <mat-icon svgIcon="icon-new-window" class="d-flex" [style.margin-left.px]="spacingJ()"/>
+      </div>
+    </div>
+  }
+}

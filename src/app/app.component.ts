@@ -3,10 +3,10 @@ import {MatButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {MatSlideToggle, MatSlideToggleChange} from '@angular/material/slide-toggle';
+import {RouterOutlet} from '@angular/router';
 import {ThemeSelectorService} from '@grzeg95/angular-lib-theme-selector';
 import {Font} from './font/font.model';
 import {FontStore} from './font/font.store';
-import {PhaseSearchBarComponent} from './phase/phase-search-bar/phase-search-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ import {PhaseSearchBarComponent} from './phase/phase-search-bar/phase-search-bar
     MatMenu,
     MatMenuItem,
     MatSlideToggle,
-    PhaseSearchBarComponent
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
