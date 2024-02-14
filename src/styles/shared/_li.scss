@@ -1,0 +1,9 @@
+@mixin li($theme-colors) {
+
+  li {
+
+    &::marker {
+      color: map-get($theme-colors, 'accent');
+    }
+  }
+}

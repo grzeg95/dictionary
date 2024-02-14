@@ -1,1 +1,264 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import 'styles/custom-angular-material/styles';
+@import 'styles/custom-bootstrap/styles';
+@import 'styles/shared/styles';
+
+:root {
+
+  // mat-form-field
+  --mat-form-field-subscript-text-size: 16px;
+  --mat-form-field-container-vertical-padding: 16px;
+  --mat-form-field-container-height: 48px;
+
+  // mat-form-field
+  @include media-breakpoint-up(md) {
+    --mat-form-field-subscript-text-size: 20px;
+    --mat-form-field-container-vertical-padding: 20px;
+    --mat-form-field-container-height: 64px;
+  }
+}
+
+.custom-angular-material {
+
+  .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+  .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+
+    font-size: 16px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 20px;
+    }
+  }
+
+  .mat-mdc-form-field {
+
+    gap: 3px;
+
+    @include media-breakpoint-up(md) {
+      gap: 8px;
+    }
+  }
+
+  .mat-mdc-form-field-subscript-wrapper,
+  .mat-mdc-form-field-bottom-align::before {
+    line-height: var(--mat-form-field-subscript-text-line-height, initial);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.inter {
+  font-family: Inter, sans-serif;
+}
+
+.lora {
+  font-family: Lora, serif;
+}
+
+.inconsolata {
+  font-family: Inconsolata, monospace;
+}
+
+.dark-theme {
+
+  // mat-menu
+  --mat-menu-container-color: #1F1F1F;
+  --mat-menu-item-label-text-color: white;
+
+  // mat-form-field
+  --mat-form-field-error-text-color: #FF5252;
+
+  // mdc-outlined-text-field
+  --mdc-outlined-text-field-outline-color: transparent;
+  --mdc-outlined-text-field-hover-outline-color: #A445ED;
+  --mdc-outlined-text-field-focus-outline-color: #A445ED;
+  --mdc-outlined-text-field-input-text-placeholder-color: rgba(255, 255, 255, 0.25);
+  --mdc-outlined-text-field-error-focus-outline-color: #FF5252;
+  --mdc-outlined-text-field-error-hover-outline-color: #FF5252;
+  --mdc-outlined-text-field-input-text-color: white;
+  --mdc-outlined-text-field-caret-color: white;
+  --mdc-outlined-text-field-error-outline-color: #FF5252;
+
+  // mdc-fab
+  --mdc-fab-container-elevation-shadow: none;
+  --mdc-fab-hover-container-elevation-shadow: none;
+  --mdc-fab-pressented-container-elevation-shadow: none;
+  --mdc-fab-focus-container-elevation-shadow: none;
+  --mdc-fab-pressed-container-elevation-shadow: none;
+
+  background: #050505;
+  color: white;
+
+  .color-basic {
+    color: white;
+  }
+
+  .mdc-text-field--outlined {
+    background: #1F1F1F;
+  }
+
+  .mat-mdc-menu-item:not([disabled]):hover {
+    .mat-mdc-menu-item-text {
+      color: #A445ED;
+    }
+  }
+
+  .mat-mdc-button {
+    --mdc-text-button-label-text-color: white;
+  }
+
+  .menu-backdrop-class {
+    box-shadow: 0 5px 30px #A445ED;
+  }
+
+  .vr {
+    background: #E9E9E9;
+  }
+
+  .mat-mdc-slide-toggle.mat-accent {
+    --mdc-switch-selected-track-color: #A445ED;
+    --mdc-switch-selected-handle-color: white;
+    --mdc-switch-selected-hover-handle-color: white;
+    --mdc-switch-selected-hover-track-color: #A445ED;
+    --mdc-switch-selected-pressed-handle-color: white;
+    --mdc-switch-selected-pressed-track-color: #A445ED;
+    --mdc-switch-selected-focus-handle-color: white;
+    --mdc-switch-selected-focus-track-color: #A445ED;
+  }
+
+  .icon-color-accent {
+    svg {
+      path {
+        stroke: #A445ED;
+      }
+    }
+  }
+
+  .mat-mdc-fab.mat-accent,
+  .mat-mdc-mini-fab.mat-accent {
+    --mdc-fab-container-color: rgba(164, 69, 237, 0.25);
+    --mat-fab-foreground-color: #A445ED;
+    --mat-fab-state-layer-color: #000;
+    --mat-fab-ripple-color: rgba(164, 69, 237, 0.1);
+
+    &:hover {
+      --mdc-fab-container-color: #A445ED;
+      --mat-fab-foreground-color: white;
+    }
+  }
+
+  .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #C577FF;
+    --mdc-linear-progress-track-color: #1F1F1F;
+  }
+}
+
+.light-theme {
+
+  // mat-menu
+  --mat-menu-container-color: white;
+  --mat-menu-item-label-text-color: #2D2D2D;
+
+  // mdc-switch-unselected
+  --mdc-switch-unselected-track-color: #757575;
+  --mdc-switch-unselected-handle-color: white;
+  --mdc-switch-unselected-hover-track-color: #757575;
+  --mdc-switch-unselected-hover-handle-color: white;
+  --mdc-switch-unselected-focus-track-color: #757575;
+  --mdc-switch-unselected-focus-handle-color: white;
+  --mdc-switch-unselected-pressed-track-color: #757575;
+  --mdc-switch-unselected-pressed-handle-color: white;
+
+  // mat-form
+  --mat-form-field-error-text-color: #FF5252;
+
+  // mdc-outlined
+  --mdc-outlined-text-field-outline-color: transparent;
+  --mdc-outlined-text-field-hover-outline-color: #A445ED;
+  --mdc-outlined-text-field-focus-outline-color: #A445ED;
+  --mdc-outlined-text-field-input-text-placeholder-color: rgba(45, 45, 45, 0.2);
+  --mdc-outlined-text-field-error-focus-outline-color: #FF5252;
+  --mdc-outlined-text-field-error-hover-outline-color: #FF5252;
+  --mdc-outlined-text-field-input-text-color: #2D2D2D;
+  --mdc-outlined-text-field-caret-color: #2D2D2D;
+  --mdc-outlined-text-field-error-outline-color: #FF5252;
+
+  // mdc-fab
+  --mdc-fab-container-elevation-shadow: none;
+  --mdc-fab-hover-container-elevation-shadow: none;
+  --mdc-fab-pressented-container-elevation-shadow: none;
+  --mdc-fab-focus-container-elevation-shadow: none;
+  --mdc-fab-pressed-container-elevation-shadow: none;
+
+  background: white;
+  color: #2D2D2D;
+
+  .color-basic {
+    color: #2D2D2D;
+  }
+
+  .mdc-text-field--outlined {
+    background: #F4F4F4;
+  }
+
+  .mat-mdc-menu-item:not([disabled]):hover {
+    .mat-mdc-menu-item-text {
+      color: #A445ED;
+    }
+  }
+
+  .mat-mdc-button {
+    --mdc-text-button-label-text-color: #2D2D2D;
+  }
+
+  .menu-backdrop-class {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .vr {
+    background: #E9E9E9;
+  }
+
+  .mat-mdc-slide-toggle.mat-accent {
+    --mdc-switch-selected-track-color: #A445ED;
+    --mdc-switch-selected-handle-color: white;
+    --mdc-switch-selected-hover-handle-color: white;
+    --mdc-switch-selected-hover-track-color: #A445ED;
+    --mdc-switch-selected-pressed-handle-color: white;
+    --mdc-switch-selected-pressed-track-color: #A445ED;
+    --mdc-switch-selected-focus-handle-color: white;
+    --mdc-switch-selected-focus-track-color: #A445ED;
+  }
+
+  .icon-color-accent {
+    svg {
+      path {
+        stroke: #757575;
+      }
+    }
+  }
+
+  .mat-mdc-fab.mat-accent,
+  .mat-mdc-mini-fab.mat-accent {
+    --mdc-fab-container-color: rgba(164, 69, 237, 0.25);
+    --mat-fab-foreground-color: #A445ED;
+    --mat-fab-state-layer-color: #000;
+    --mat-fab-ripple-color: rgba(164, 69, 237, 0.1);
+
+    &:hover {
+      --mdc-fab-container-color: #A445ED;
+      --mat-fab-foreground-color: white;
+    }
+  }
+
+  .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #c577ff;
+    --mdc-linear-progress-track-color: #F4F4F4;
+  }
+}

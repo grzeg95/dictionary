@@ -1,0 +1,17 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+.app-phase-search-bar {
+
+  &__icon-search {
+
+    width: 18px;
+    height: 18px;
+    padding: 0 23px 0 0 !important;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 23px 0 0 !important;
+    }
+  }
+}

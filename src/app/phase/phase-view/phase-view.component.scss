@@ -1,0 +1,35 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+.app-phase-view {
+
+  &__loading-wrapper {
+    height: var(--mdc-linear-progress-active-indicator-height);
+  }
+
+  &__margin-bottom-44 {
+    margin-bottom: 44px;
+  }
+
+  &__margin-bottom-24 {
+    margin-bottom: 24px;
+  }
+
+  &__margin-top-99 {
+    margin-top: 99px;
+  }
+
+  &__mdc-fab {
+
+    height: 48px !important;
+    width: 48px !important;
+
+    @include media-breakpoint-up(md) {
+      &-md {
+        height: 75px !important;
+        width: 75px !important;
+      }
+    }
+  }
+}

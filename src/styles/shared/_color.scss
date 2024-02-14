@@ -1,0 +1,10 @@
+@mixin color($theme-colors) {
+
+  .color-accent {
+    color: map-get($theme-colors, 'accent');
+  }
+
+  .color-secondary {
+    color: map-get($theme-colors, 'secondary');
+  }
+}

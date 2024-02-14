@@ -1,0 +1,22 @@
+[
+  {
+    "name": "icon-arrow-down",
+    "src": "icon-arrow-down.svg"
+  },
+  {
+    "name": "icon-moon",
+    "src": "icon-moon.svg"
+  },
+  {
+    "name": "icon-new-window",
+    "src": "icon-new-window.svg"
+  },
+  {
+    "name": "icon-search",
+    "src": "icon-search.svg"
+  },
+  {
+    "name": "logo",
+    "src": "logo.svg"
+  }
+]

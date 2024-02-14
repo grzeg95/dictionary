@@ -1,0 +1,78 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+.app-root {
+
+  &__main {
+
+    margin: 0 23px;
+    max-width: 737px;
+
+    @media (min-width: 800px) {
+      margin: auto;
+    }
+
+    &__nav {
+
+      margin-top: 23px;
+      margin-bottom: 23px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 57px;
+        margin-bottom: 51px;
+      }
+
+      &__logo {
+
+        width: 30px !important;
+        height: 34px !important;
+
+        svg g {
+          stroke: #757575;
+        }
+
+        @include media-breakpoint-up(md) {
+          width: 34px !important;
+          height: 38px !important;
+        }
+      }
+
+      &__selected-font {
+
+        font-size: 14px;
+        line-height: 24px;
+
+        @include media-breakpoint-up(md) {
+          font-size: 18px;
+        }
+      }
+
+      &__vr {
+
+        margin-right: 16px;
+        margin-left: calc(16px - 8px);
+        height: 32px;
+        width: 1px;
+        display: block;
+        opacity: 1;
+        align-self: auto;
+
+        @include media-breakpoint-up(md) {
+          margin-right: 26px;
+          margin-left: calc(26px - 8px);
+        }
+      }
+
+      &__icon-moon {
+
+        flex: none;
+        margin-left: 11px;
+
+        @include media-breakpoint-up(md) {
+          margin-left: 19px;
+        }
+      }
+    }
+  }
+}
